@@ -1,3 +1,7 @@
+
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  * MAZE (Laberinto)
  * En este archivo definimos la forma del laberinto y los niveles de juego. 
@@ -5,6 +9,7 @@
  * laberinto, asi como las dimensiones de los bloques que rellenaran las 
  * intersecciones fila/columna
  * @author fucalex
+ * 
  */
 public class Maze {
     int[][]lab=new int[13][23];
@@ -25,10 +30,10 @@ public class Maze {
         
         for(row=0;row<rownumber;row++){
             for(col=0;col<colnumber;col++){
-                if(maze)[row][col]==1){
+                if(maze[row][col]==1){
                     if(Game.getLevel()==1){grafico.setColor(Color.darkGray);}
-                    if(Game.getLevel()==2){grafico.setColor(Color.pink);}
-                    if(Game.getLevel()>=3){grafico.setColor(Color.magenta);}
+                    if(Game.getLevel()==2){grafico.setColor(Color.green);}
+                    if(Game.getLevel()>=3){grafico.setColor(Color.blue);}
 
                     grafico.fillRect(col*40,row*40,blockwidth,blockheight);
                     grafico.setColor(Color.black);

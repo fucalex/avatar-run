@@ -1,6 +1,7 @@
 /**
  * PANEL DE JUEGO Y OPCIONES DE BASE
  * @author fucalex
+ * 
  */
 
 import java.awt.Graphics;
@@ -54,6 +55,7 @@ public class Game extends JPanel{
    /**
     * Las caracteristicas visibles del laberinto y el personaje, son definidas 
     * en sus respectivos archivos
+     * @param grafico
     */
 
     public void paint(Graphics grafico){
@@ -63,7 +65,8 @@ public class Game extends JPanel{
    /**
     * Para cambiar de nivel, cuando el avatar llegue a una posicion determinada
     * en el laberinto (definido en avatar.java), al nivel actual se le sumará 
-    * una unidad para indicar que se debe cargar el siguiente nivel.
+    * una unidad para indicar que se debe cargar el siguiente nivel en el
+	* frame del juego.
     */    
     public static int changeLevel(){
         return level++;
@@ -87,8 +90,10 @@ public class Game extends JPanel{
     */ 
 
     public static void main(String[]args){
-       JOptionPane.showMessageDialog(null, "ready?");
-       JFrame myWindow=new JFrame("Avatar Run");
+	   JOptionPane.showMessageDialog(null, "Years ago, a scientist created a new animal and called it 'ernudo'.\nBut a fiercy fire destroyed his lab.\nNowadays, a great explorer called 'Martino', has decided to get in the ruins\nof that old lab, to proof that animal exists indeed, but he danger lies on...");
+       JOptionPane.showMessageDialog(null, "Will he survive? Ready to help him get out the maze?");
+	   JOptionPane.showMessageDialog(null, "Remember, get out the maze before the monsters catch you!");
+       JFrame myWindow=new JFrame("AVATAR RUN ∫_☻");
        Game game =new Game();
        myWindow.add(game);
        myWindow.setSize(920,540);
@@ -113,7 +118,7 @@ public class Game extends JPanel{
         } catch (InterruptedException ex) {
              Logger.getLogger(Game.class.getName()).log(Level.SEVERE, "you lose");
         }
-        game.repaint();   
+        myWindow.repaint();   
         
    /**
     * Por otro lado, si el jugador llegó al final del ultimo laberinto sin 
